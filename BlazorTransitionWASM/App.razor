@@ -1,0 +1,19 @@
+﻿<Router AppAssembly="@typeof(App).Assembly">
+   <Found Context="routeData">
+		<LayoutView Layout="@typeof(MainLayout)">
+            <TransitionableRoutePrimary RouteData="@routeData">
+                <TransitionableRouteView DefaultLayout="@typeof(MyViewLayout)" />
+            </TransitionableRoutePrimary>
+            <TransitionableRouteSecondary RouteData="@routeData">
+                <TransitionableRouteView DefaultLayout="@typeof(MyViewLayout)" />
+            </TransitionableRouteSecondary>
+        </LayoutView>
+      
+	</Found>
+    <NotFound>
+        <PageTitle>Not found</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <p role="alert">Sorry, there's nothing at this address.</p>
+        </LayoutView>
+    </NotFound>
+</Router>
